@@ -1,0 +1,22 @@
+mixin menu(currentPage)
+  header#header.container-fluid(test=currentPage)
+    nav.navbar.navbar-expand-md
+      .navbar-brand.abs(href='#') Travel Information Management
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsingNavbar')
+        span.navbar-toggler-icon
+      #collapsingNavbar.navbar-collapse.collapse
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link(href="/",aria-current="page",class = (currentPage === 'home') ? 'active' : '') Home
+          li.nav-item
+            a.nav-link(href='/suppliers', class= (currentPage === 'suppliers') ? 'active' : '') Suppliers
+        ul.navbar-nav.ms-auto  
+          li.nav-item
+            a.nav-link(href="/settings",aria-current="page",class = (currentPage === 'settings') ? 'active' : '') Settings
+          li.nav-item.dropdown(class= (currentPage === 'login') || (currentPage === 'reset') || (currentPage === 'register') ? 'active' : '')
+            a.nav-link.dropdown-toggle(href="/login" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false") Users
+            ul.dropdown-menu( aria-labelledby="navbarDropdownMenuLink" )
+              li.nav-item
+                a.dropdown-item(href="/login") Login
+              li.nav-item
+                a.dropdown-item(href="/register") Register

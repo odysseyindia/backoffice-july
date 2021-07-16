@@ -1,0 +1,29 @@
+/* src/assets/styles/utils/_colors.scss  */
+
+$primary 		: #588bad;
+$secondary 		: #f4f4f5;
+$darkslategray	: #1f273e;
+$text 			: rgb(33, 37, 41); // #525a68;
+
+$white          : #fff;
+$grey  			: #525a68;
+$green 			: #6ba557;
+$blue  			: #5996cf; 
+$orange 		: #E46711; 
+$red            : #be0f1e; 
+
+$font-family-sans-serif: "Libre Franklin", sans-serif;
+
+$body-bg							: $secondary;
+$body-color							: $text;
+
+$navbar-padding-y					: 0;
+$navbar-brand-padding-y				: 0;
+
+$nav-link-padding-x					: 15px;
+$nav-link-padding-y					: 0 ;
+$nav-link-font-size 				: 14px;
+$nav-link-font-weight				: 400 ;
+$nav-link-color						: $white ;
+$nav-link-hover-color				: $white ;
+$nav-link-transition				: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;

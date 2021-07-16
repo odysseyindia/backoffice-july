@@ -1,0 +1,37 @@
+extends layout
+
+block title
+  title TIM - Reset password
+
+block basicSeo
+  meta(name='description' content='Contact page')
+  meta(name='keywords', content='contact, page')
+  meta(name='author' content='')
+
+block manifestBrowserconfigFiles
+  link(href='../manifest.json', rel='manifest')
+  meta(name='msapplication-config' content='../browserconfig.xml')
+
+block content
+
+  +menu('reset')
+
+  main(id="login")
+    .container-sm
+      .row
+        .card.shadow-1
+          .card-header Reset Password
+          .card-body
+            form.form-horizontal(method='post' action='http://192.168.0.157:3001/login')
+              input(type='hidden' name='_token' value='6MTVfborPGSFoyTjlhVQz0Tubo8X6HGAEhtQdgzl')
+              .form-group.row
+                label.col-md-4.col-form-label.text-md-right(for='email') E-mail Address
+                .col-md-6
+                  input#email.form-control(type='email' name='email' placeholder='E-mail Address' value='' maxlength='255' required='required' autofocus='autofocus' autocomplete='email')
+
+              .form-group.row.mb-0
+                .col-md-8.offset-md-4
+                  button.btn.btn-grey.shadow-1(type='submit') Send password link
+
+  script(src='javascripts/index.bundle.js')
+

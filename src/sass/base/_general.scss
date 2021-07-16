@@ -1,0 +1,20 @@
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  height: 100%;
+  font-family: $franklin;
+  font-weight: $font-weight-light;
+  background-color: $secondary;
+  color: $text; 
+  margin:  0;
+  padding: 0;
+}
+
+main {
+   margin-top: 30px;
+}
+

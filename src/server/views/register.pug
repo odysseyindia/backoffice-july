@@ -1,0 +1,50 @@
+extends layout
+
+block title
+  title TIM - Register 
+
+block content
+
+  +menu('register')
+
+  main(id="login")
+    .container-sm
+      .row
+        .card.shadow-1
+          .card-header Register
+          .card-body
+            form.form-horizontal(method='post' action='http://192.168.0.157:3001/login')
+              input(type='hidden' name='_token' value='6MTVfborPGSFoyTjlhVQz0Tubo8X6HGAEhtQdgzl')
+              
+              .form-group.row
+                label.col-md-4.col-form-label.text-md-right(for='name') Name
+                .col-md-6
+                  input#name.form-control(type='name' name='name' placeholder='Name' value='' maxlength='255' required='required' autofocus='autofocus' autocomplete='name')
+              
+              .form-group.row
+                label.col-md-4.col-form-label.text-md-right(for='email') E-mail Address
+                .col-md-6
+                  input#email.form-control(type='email' name='email' placeholder='E-mail Address' value='' maxlength='255' required='required' autofocus='autofocus' autocomplete='email')
+
+              .form-group.row
+                label.col-md-4.col-form-label.text-md-right(for='password') Password
+                .col-md-6
+                  input#password.form-control(type='password' name='password' placeholder='Password' maxlength='100' required='required' autocomplete='current-password')
+
+              .form-group.row
+                label.col-md-4.col-form-label.text-md-right(for='passwordconf') Password Confirmation
+                .col-md-6
+                  input#passwordconf.form-control(type='password' name='passwordconf' placeholder='Password Confirmation' value='' maxlength='255' required='required' autocomplete='current-password' autofocus='autofocus')
+
+              .form-group.row
+                .col-md-6.offset-md-4
+                  .form-check
+                    input#remember.form-check-input(name='iagree' type='checkbox')
+                    label.form-check-label(for='iagree') I agree to the 
+                      a(href="/terms-and-conditions") Terms & Conditions
+              
+              .form-group.row.mb-0
+                .col-md-8.offset-md-4
+                  button.btn.btn-grey.shadow-1(type='submit') Register
+
+  script(src='javascripts/index.bundle.js')

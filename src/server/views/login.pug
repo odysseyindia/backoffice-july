@@ -1,0 +1,49 @@
+extends layout
+
+block title
+  title TIM - Login
+
+block content
+
+  +menu('login')
+
+  main(id="login")
+    .container-sm
+      .row
+        .card.shadow-1
+          .card-header Login
+          .card-body
+            form.form-horizontal(method='post' action='http://192.168.0.157:3001/login')
+              input(type='hidden' name='_token' value='6MTVfborPGSFoyTjlhVQz0Tubo8X6HGAEhtQdgzl')
+              .form-group.row
+                label.col-md-4.col-form-label.text-md-right(for='email') E-mail Address
+                .col-md-6
+                  input#email.form-control(type='email' name='email' placeholder='E-mail Address' value='' maxlength='255' required='required' autofocus='autofocus' autocomplete='email')
+              .form-group.row
+                label.col-md-4.col-form-label.text-md-right(for='password') Password
+                .col-md-6
+                  input#password.form-control(type='password' name='password' placeholder='Password' maxlength='100' required='required' autocomplete='current-password')
+              .form-group.row
+                .col-md-6.offset-md-4
+                  .form-check
+                    input#remember.form-check-input(name='remember' type='checkbox')
+                    label.form-check-label(for='remember')
+                      | Remember Me
+              .row
+                .col
+                  #_g-recaptcha
+                  .g-recaptcha(data-sitekey='6LcDkqsZAAAAAE4B0l1dZW9aiT9GKehlXhQh5IuB' data-size='invisible' data-callback='_submitForm' data-badge='bottomright')
+                    .grecaptcha-badge(data-style='bottomright' style='width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;')
+                      .grecaptcha-logo
+                        iframe(title='reCAPTCHA' src='https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LcDkqsZAAAAAE4B0l1dZW9aiT9GKehlXhQh5IuB&co=aHR0cHM6Ly9kZW1vLmxhcmF2ZWwtYm9pbGVycGxhdGUuY29tOjQ0Mw..&hl=en&v=vzAt61JclNZYHl6fEWIBqLbe&size=invisible&badge=bottomright&cb=go7dyy17pnwb' width='256' height='60' role='presentation' name='a-cjtzm0wfmzwt' frameborder='0' scrolling='no' sandbox='allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox')
+                      .grecaptcha-error
+                      textarea#g-recaptcha-response.g-recaptcha-response(name='g-recaptcha-response' style='width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;')
+                    iframe(style='display: none;')
+                  input(type='hidden' name='captcha_status' value='true')
+              .form-group.row.mb-0
+                .col-md-8.offset-md-4
+                  button.btn.btn-grey.shadow-1(type='submit') Login
+                  a.btn.btn-link(href='/reset') Forgot Your Password?
+              .text-center
+
+  script(src='javascripts/index.bundle.js')

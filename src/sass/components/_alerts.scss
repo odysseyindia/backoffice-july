@@ -1,0 +1,92 @@
+
+
+.info {
+    color: #5996C5;
+}
+
+.alert-box {
+    margin-top: 7px;
+    border: 1px solid currentColor;
+    width: 100%;
+    display: flex;
+    font-size: 12px;
+    background: #fff;
+    margin-top: 20px;
+    min-height: 50px;
+    font-weight: 500;
+    line-height: 14px;
+    border-radius: 5px;
+}
+
+.border {
+    border: 1px solid #5996C5 !important;
+}
+
+
+
+.alert-icon {
+    background: $white;
+    width: 47px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+}
+
+
+.alert-svg {
+    width: 47px;
+    background: currentColor;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    color: $white;
+}
+.border > .alert-svg {
+    background: #5996C5;
+}
+
+svg {
+    touch-action: none;
+}
+
+svg.alert {
+    fill: $white;
+width: 1em;
+height: 1em;
+    display: inline-block;
+    font-size: 24px;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+
+.alert-text {
+    padding: 8px 10px;
+    align-self: center;
+}
+
+
+
+/* warning triangle */
+
+.triangle {
+    width: 34px;
+    color: #E46711;
+    padding-right: 0;
+}
+
+svg.triangle {
+    color: $red;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 24px;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    user-select: none;
+    flex-shrink: 0;
+}
