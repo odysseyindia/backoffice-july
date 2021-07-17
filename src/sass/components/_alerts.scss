@@ -1,8 +1,10 @@
 
 
-.info {
-    color: #5996C5;
-}
+.success    { color: $success;}
+.info       { color: $info;}
+.warning    { color: $warning;}
+.danger     { color: $danger;}
+.dark       { color: $dark;}
 
 .alert-box {
     margin-top: 7px;
@@ -16,24 +18,37 @@
     font-weight: 500;
     line-height: 14px;
     border-radius: 5px;
+    &.success {
+        color: $success;
+        border: 1px solid $success !important; 
+    }
+    &.info {
+        color: $info;
+        border: 1px solid $info !important; 
+    }
+    &.warning {
+        color: $warning;
+        border: 1px solid $warning !important; 
+    }
+    &.danger {
+        color: $danger;
+        border: 1px solid $danger !important; 
+    }
+    &.dark {
+        color: $dark;
+        border: 1px solid $dark !important; 
+    }
 }
-
-.border {
-    border: 1px solid #5996C5 !important;
-}
-
-
 
 .alert-icon {
     background: $white;
     width: 47px;
-    color: #fff;
+    color: $white;
     display: flex;
     align-items: center;
     flex-shrink: 0;
     justify-content: center;
 }
-
 
 .alert-svg {
     width: 47px;
@@ -42,11 +57,12 @@
     align-items: center;
     flex-shrink: 0;
     justify-content: center;
-    color: $white;
 }
-.border > .alert-svg {
-    background: #5996C5;
-}
+.success > .alert-svg {background: $success;}
+.info > .alert-svg {background: $info;}
+.warning > .alert-svg {background: $warning;}
+.danger > .alert-svg {background: $danger;}
+.dark > .alert-svg {background: $dark;}
 
 svg {
     touch-action: none;
@@ -54,15 +70,14 @@ svg {
 
 svg.alert {
     fill: $white;
-width: 1em;
-height: 1em;
+    width: 1em;
+    height: 1em;
     display: inline-block;
     font-size: 24px;
     transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     user-select: none;
     flex-shrink: 0;
 }
-
 
 .alert-text {
     padding: 8px 10px;

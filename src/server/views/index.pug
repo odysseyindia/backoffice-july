@@ -15,3 +15,42 @@ block manifestBrowserconfigFiles
 block content
 
   +menu('home')
+
+  main
+    .container.mw-1200
+      include components/alert
+    .container.mw-1200
+      .panel.duo
+        .widget
+          .card
+            .card-header
+              .row.flexrow.nowrap
+                .svg-box.svg
+                .card-title 
+                  h4 My itineraries
+            .card-body
+              h5.card-title Special title treatment
+              p.card-text With supporting text below as a natural lead-in to additional content.
+              a.btn.btn-primary(href='#') Go somewhere
+
+        .widget
+          .card
+            .card-header
+              .row.flexrow.nowrap
+                .svg-box.svg
+                .card-title 
+                  h4 My Sales Progres
+            .card-body
+              p.card-text Set your sales goals to see them appear here
+
+      .panel
+        .widget
+          .card
+            .card-header
+              .row.flexrow.nowrap
+                .svg-box.svg
+                .card-title 
+                  h4 Upcoming Itineraries
+                  h6 This week
+            .card-body
+              p.card-text You have no itineraries commencing
