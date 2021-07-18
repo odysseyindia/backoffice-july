@@ -3,89 +3,24 @@ extends layout
 block title
   title TIM - Suppliers
 
-block basicSeo
-  meta(name='description' content='Contact page')
-  meta(name='keywords', content='contact, page')
-  meta(name='author' content='')
-
-block manifestBrowserconfigFiles
-  link(href='../manifest.json', rel='manifest')
-  meta(name='msapplication-config' content='../browserconfig.xml')
-
 block content
 
-  +menu('suppliers')
+  +menu('suppliers')    
 
-  div.container
-      each city in data
-        div.city
-          h2
-            | City is #{city.city} with code #{city.citycode} and id #{city.cities_id}
-          
-  main.page.suppliers__page
-    .container
-      .subcontainer
-        .panel  
-          .odc21
-            .odc22
-              .supplier-hdr
-                .mr-30
-                  h2.title-header Suppliers
-                .create-button
-                  .a.create-button(tabindex="0" role="button" href="/cities/create")
-                    button.btn.btn-grey( type="button") Create Supplier
-              .odc2
-                .section
-                  .flex
-                    button.search(tabindex="0" type="button")
-                      span
-                        svg.svg-search (focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation")
-                          path( d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z")
-                          path( fill="none" d="M0 0h24v24H0z")
-                    input.search-box(placeholder="Search" role="searchbox" value="")
-                  .flex(role="switch" aria-checked="false" tabindex="0")
-                    .show-archived Show archived
-                    button.btn-archive(tabindex="0" type="button")
-                      svg.svg-archive(focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation")
-                        path( d="M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z")
-                        path( fill="none" d="M0 0h24v24H0z")
-            table.table
-              thead
-                tr
-                  th.col1(scope="col")
-                    span.odc8(tabindex="0" role="button" data-column="name")
-                      span.supplier-name Supplier
-                        svg.svg-arrow( focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation")
-                          path( d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z")
-                          path( fill="none" d="M0 0h24v24H0V0z")
-                  th.col2(scope="col")
-                    span.odc8(tabindex="0" role="button" data-column="type")
-                      span.supplier-name City
-                        svg.svg-arrow( focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation")
-                          path( d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z")
-                          path( fill="none" d="M0 0h24v24H0V0z")
-                  th.col3(scope="col")
-                    span.supplier-name State / Country
-                  th.col4(scope="col")
-                    span.odc8(tabindex="0" role="button" data-column="created_at")
-                      span.odc1 Created
-                        svg.svg-arrow(focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation")
-                          path(d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z")
-                          path(fill="none" d="M0 0h24v24H0V0z")
-                  th.col5(scope="col")
-                  th.col6(scope="col")
-              tbody
-                tr(data-url="{{ .RelPermalink }}")
-                  td.fw
-                    .name
-                      Title
-                  td destination
-                    .odc20 country 
-                  td publishedDate
-                  td
-                    .menu-icon
-                      button.menu-icon-btn(tabindex="0" type="button" aria-label="More" aria-haspopup="true" title="More")
-                        span.svg-menu-span
-                          svg.svg-menu(focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation")
-                            path(fill="none" d="M0 0h24v24H0z")
-                            path(d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z")
+  main#suppliers
+     .container.mw-1200
+      div.subcontainer
+        .flexrow.nowrap.header
+            h2.title-header Suppliers
+            .create-button
+              .a.create-button(tabindex="0" role="button" href="/cities/create")
+                button.btn.btn-grey( type="button") Create Supplier
+
+        table#table(data-toolbar='#toolbar' data-search='true' data-show-refresh='false' data-show-toggle='false' data-show-fullscreen='false' data-show-columns='true' data-show-columns-toggle-all='true' data-detail-view='false' data-show-export='false' data-click-to-select='true' data-minimum-count-columns='2' data-show-pagination-switch='false' data-pagination='true' data-id-field='id' data-page-list='[10, 25, 50, 100, all]' data-side-pagination='server' data-response-handler='responseHandler' )
+
+block script
+ 
+  script.
+    var local_data =!{JSON.stringify(data)}
+  include suppliers.js
+  

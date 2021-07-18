@@ -1,17 +1,72 @@
-/* src/assets/styles/pages/_suppliers.scss  */
+#suppliers {
 
-.suppliers__page {
-
-
-thead {
-  display: table-header-group;
-}
-tr {
-  height: 50px;
+.subcontainer {
+  background-color: $white;
+  padding: 30px;
 }
 
-th {
-  color: #343642;
+.header {
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+svg {
+  height: 24px;
+}
+
+.svg-search, .svg-archive {
+  height:40px;
+  border:0;
+  background-color: $white;
+  fill: $text-light;
+}
+.svg-search {
+  padding-top: 10px;
+  fill: $text-light;
+}
+
+.svg-more {
+  fill: $text-light;
+}
+.show-archived {
+  padding-top: 10px;
+  color: gray;
+}
+
+button {
+  border: 0;
+  background-color: $white;
+}
+
+.search {
+  color: $text-light;
+  border-top: 1px solid $text-light;
+  margin-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+input {
+  border: 0;
+}
+
+.svg-arrow {
+  font-size: 24px;
+  height: 24px;
+}
+
+
+
+  thead {
+    display: table-header-group;
+    width: 100%;
+  }
+  tr {
+    height: 50px;
+  }
+
+  th {
+    color: #343642;
     font-size: 12px;
     font-family: Libre Franklin, sans-serif;
     font-weight: 500;
@@ -19,37 +74,23 @@ th {
     padding-top: 2px;
     padding-bottom: 0;
     text-transform: uppercase;
-}
+  }
 
-.col1:first-child {
+  .col1:first-child {
     padding-left: 10px;
-}
+  }
 
-.col2 {  width: 200px;}
-.col3 {  width: 300px;}
-.col4 {  width: 170px;}
-.col5 {  width: 34px;}
-.col6 {  width: 34px;}
+  .col2 {  width: 200px;}
+  .col3 {  width: 300px;}
+  .col4 {  width: 170px;}
+  .col5 {  width: 34px;}
+  .col6 {  width: 34px;}
 
 
 
   /* ======================= */
 
-  table {
-    width:  100%;
-    display: table;
-    font-family: Libre Franklin, sans-serif;
-    border-spacing: 0;
-    border-collapse: collapse;
-  }
 
-  tbody {
-    display: table-row-group;
-  }
-
-  thead {
-    display: table-header-group;
-  }
 
   th {
     display: table-cell;
@@ -60,7 +101,6 @@ th {
     vertical-align: inherit;
     color: #343642;
     font-size: 12px;
-    font-family: Libre Franklin, sans-serif;
     font-weight: 500;
     line-height: 14px;
     text-transform: uppercase;
@@ -76,7 +116,6 @@ th {
     outline: none;
     vertical-align: middle;
     &:hover {
-      background-color: rgb(237, 238, 239);
       cursor: pointer;
     }
   }
@@ -88,7 +127,6 @@ th {
   th {
     color: #343642;
     font-size: 12px;
-    font-family: Libre Franklin, sans-serif;
     font-weight: 500;
     line-height: 14px;
     padding-top: 2px;
@@ -125,19 +163,8 @@ th {
     }
   }
 
-  .table {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .col1, .col2, .col3, .col4 { 
+  
+  .col1, .col2, .col3, .col4, .col5, .col6 { 
     flex-grow: 0;
     padding: 0 15px;
   }
@@ -157,12 +184,18 @@ th {
     flex-basis: 16.666667%;
   }
 
+.btn.more {
+  background-color: inherit;
+}
 
-  .flex {
-    display:  flex;
-    flex-wrap: nowrap;
-    align-items: center;
+/* bootstrap table */
+
+.select,
+  #locale {
+    width: 100%;
   }
-
+  .like {
+    margin-right: 10px;
+  }
 
 }

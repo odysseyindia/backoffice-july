@@ -4,32 +4,35 @@ const env   = require('dotenv').config();
 
 var router  = express.Router();
 
-const url   = process.env.HOST+'/db/getRecord';
-
-/*
 router.get('/', async(req, res) => {
-  const data = await axios.get(url,{
-    params: {  
-      fields: ["Addressbook_id, Organisation + ', ' + City AS OrgCity"], 
-      orders: ['OrgCity'], 
-      table: "dbo.fn_addressbook(2,'A')"
-    }
-  }).then((response) => {
-    res.render('suppliers', { title: 'Suppliers', data: response.data });
+
+  if (process.env.HOST){
+
+    axios.post(process.env.HOST+'/db/getRecord',{
+      "fields":["Addressbook_id, Organisation"],
+      "orders":["organisation"],
+      "table":"dbo.fn_addressbook(2,'OA')"
+    })
+    .then(function (response) {
+    // handle success
+    //const data  = JSON.parse(response.data);
+    res.render('suppliers', { data: response.data });
+
+  })
+    .catch(function (error) {
+    // handle error
+    console.log(error);
+    res.render('suppliers', { msg: error, data: [] });
+
+  })
+    .then(function () {
+    // always executed
   });
+
+  } else {
+    res.render('suppliers', { show: 'show', msg: 'Host ip is not on file' });  
+  }
+
 });
-
-*/
-
-/*
-
-router.get('/', async(req, res) => {
-  const data = await axios.get(url)
-  .then((response) => {
-    res.render('suppliers', { title: 'Suppliers', data: response.data });
-  });
-});
-
-*/
 
 module.exports = router;

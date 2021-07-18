@@ -1,6 +1,7 @@
 @import 
 './utils/colors',
 './bootstrap/bootstrap',
+'./bootstrap-table/bootstrap-table',
 
 /* Base */
 
@@ -28,5 +29,6 @@
 './pages/index',
 './pages/blog',
 './pages/contact',
-'./pages/login';
+'./pages/login',
+'./pages/suppliers';
 

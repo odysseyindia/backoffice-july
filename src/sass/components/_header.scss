@@ -67,3 +67,13 @@
 
 
 }
+
+#alert {
+  margin-top: 90px;
+  display: none;
+
+}
+
+#alert.show {
+  display: block;
+}
