@@ -1,0 +1,69 @@
+.search 
+{
+    width: unset;
+    border-top: unset;
+    margin-top: unset;
+    padding-top: unset;
+    display: flex;
+    }
+
+
+button.search
+{
+    border: 0;
+    margin: 0;
+    cursor: pointer;
+    display: inline-flex;
+    outline: none;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    vertical-align: middle;
+    justify-content: center;
+    text-decoration: none;
+    flex: 0 0 auto;
+    overflow: visible;
+    font-size: 1.7142857142857142rem;
+    text-align: center;
+    border-radius: 50%;
+    color: rgb(168, 172, 179);
+    padding: 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: transparent;
+    height: 26px;
+    width: unset;
+}
+
+span.search 
+{
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+}
+
+svg.search 
+{
+  fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 24px;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+input.search 
+{
+    color: #525a68;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    font-size: 16px;
+    background: transparent;
+    font-weight: 500;
+    line-height: 21px;
+    white-space: nowrap;
+    margin-left: 4px;
+}

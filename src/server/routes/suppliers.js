@@ -4,19 +4,20 @@ const env   = require('dotenv').config();
 
 var router  = express.Router();
 
+var agents = [];
+var hotels = [];
+
 router.get('/', async(req, res) => {
 
   if (process.env.HOST){
 
     axios.post(process.env.HOST+'/db/getRecord',{
-      "fields":["Addressbook_id, Organisation"],
-      "orders":["organisation"],
-      "table":"dbo.fn_addressbook(2,'OA')"
+      "fields":["*"],
+      "orders":["Organisation"],
+      "table":"dbo.fn_addressbook(2,'A')"
     })
     .then(function (response) {
-    // handle success
-    //const data  = JSON.parse(response.data);
-    res.render('suppliers', { data: response.data });
+    agents = response.data ;
 
   })
     .catch(function (error) {
@@ -29,9 +30,58 @@ router.get('/', async(req, res) => {
     // always executed
   });
 
+
+  axios.post(process.env.HOST+'/db/getRecord',{
+      "fields":["*"],
+      "orders":["Organisation"],
+      "table":"dbo.fn_addressbook(2,'H')"
+    })
+    .then(function (response) {
+    hotels = response.data;
+
+  })
+    .catch(function (error) {
+    // handle error
+    console.log(error);
+    res.render('suppliers', { msg: error, data: [] });
+
+  })
+    .then(function () {
+    // always executed
+  });
+
+  res.render('suppliers', { 'hotels': hotels, 'agents': agents });
+
   } else {
     res.render('suppliers', { show: 'show', msg: 'Host ip is not on file' });  
   }
+
+
+  axios.post(process.env.HOST+'/db/getRecord',{
+      "fields":["*"],
+      "orders":["Organisation"],
+      "table":"dbo.fn_addressbook(5,'')"
+    })
+    .then(function (response) {
+    all = response.data;
+
+  })
+    .catch(function (error) {
+    // handle error
+    console.log(error);
+    res.render('suppliers', { msg: error, data: [] });
+
+  })
+    .then(function () {
+    // always executed
+  });
+
+  res.render('suppliers', { 'all': all, 'hotels': hotels, 'agents': agents });
+
+  } else {
+    res.render('suppliers', { show: 'show', msg: 'Host ip is not on file' });  
+  }
+
 
 });
 

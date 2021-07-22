@@ -3,7 +3,6 @@
   var $remove = $('#remove')
   var selections = []
 
-
   function getIdSelections() {
     return $.map($table.bootstrapTable('getSelections'), function (row) {
       return row.id
@@ -27,8 +26,8 @@
 
   function operateFormatter(value, row, index) {
     return [
-      '<a class="like" href="javascript:void(0)" title="Edit">',
-      '<i class="fa fa-pen"></i>',
+      '<a class="like" href="javascript:void(0)" title="Like">',
+      '<i class="fa fa-heart"></i>',
       '</a>  ',
       '<a class="remove" href="javascript:void(0)" title="Remove">',
       '<i class="fa fa-trash"></i>',
@@ -73,30 +72,37 @@
         [{
           field: 'state',
           checkbox: true,
+          rowspan: 2,
           align: 'center',
           valign: 'middle'
         }, {
-          title: 'ID',
-          field: 'Addressbook_id',
+          title: 'Item ID',
+          field: 'id',
+          rowspan: 2,
           align: 'center',
           valign: 'middle',
           sortable: true,
           footerFormatter: totalTextFormatter
         }, {
-          field: 'Organisation',
-          title: 'Organisation',
+          title: 'Item Detail',
+          colspan: 3,
+          align: 'center'
+        }],
+        [{
+          field: 'name',
+          title: 'Item Name',
           sortable: true,
           footerFormatter: totalNameFormatter,
           align: 'center'
         }, {
-          field: 'citycode',
-          title: 'Code',
+          field: 'price',
+          title: 'Item Price',
           sortable: true,
           align: 'center',
           footerFormatter: totalPriceFormatter
         }, {
           field: 'operate',
-          title: ' ',
+          title: 'Item Operate',
           align: 'center',
           clickToSelect: false,
           events: window.operateEvents,
@@ -126,4 +132,9 @@
     })
   }
 
- </script>
+  $(function() {
+    initTable()
+
+    $('#locale').change(initTable)
+  })
+</script>

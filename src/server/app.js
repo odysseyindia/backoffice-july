@@ -6,7 +6,6 @@ var logger            = require('morgan');
 const config          = require("../config");
 
 var indexRouter       = require('./routes/index');
-var usersRouter       = require('./routes/users');
 var suppliersRouter   = require('./routes/suppliers');
 var loginRouter       = require('./routes/login');
 var resetRouter       = require('./routes/reset');
@@ -26,7 +25,7 @@ app.use(config.publicPath, express.static(config.distFolder));
 app.use(express.static(path.join(__dirname, '../../public')));
 
 app.use('/'           , indexRouter);
-app.use('/users'      , usersRouter);
+app.use('/users'      , require('./routes/users'));
 app.use('/suppliers'  , suppliersRouter);
 app.use('/login'      , loginRouter);
 app.use('/reset'      , resetRouter);
